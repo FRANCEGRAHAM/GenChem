@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zn–Cu Galvanic Cells & Supercapacitor Charging</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css"></head><body>
+<nav id="nav"><a href="#prep">Preparation</a><a href="#cells">Cell Voltages</a><a href="#conc">Concentrations</a><a href="#charge">Capacitor Charging</a><a href="#cross">Cross-Trial</a><a href="#science">Science</a><a href="#concl">Conclusion</a></nav>
+<header><div class="k">GENERAL CHEMISTRY 2 · ELECTROCHEMISTRY PERFORMANCE TASK</div>
+<h1>Zn–Cu Galvanic Cells<br>& Supercapacitor Charging</h1>
+<p>Interactive documentation of three experimental trials: single cells, a series pair, and charging two 5 F supercapacitors.</p>
+<img class="hero-img" src="images/first-test.jpg" alt="First test setup">
+<div class="stats"><div class="stat"><b>0.60 V</b><span>each Zn–Cu cell</span></div><div class="stat"><b>1.00 V</b><span>two cells in series</span></div><div class="stat"><b>3</b><span>trials</span></div><div class="stat"><b>2 × 5 F</b><span>supercapacitors</span></div></div></header>
+<main>
+
+<section id="prep"><h2><i>01 · PROCEDURE</i>Experimental Conditions & Preparation</h2>
+<div class="card"><ul>
+<li>All solutions were prepared with <b>distilled water</b>.</li><li>Zinc and copper electrodes were <b>sanded</b> before use.</li><li>Beakers were washed after every trial; solutions were stored appropriately.</li><li>Salt bridge: a Femme paper towel soaked in the salt-bridge solution.</li></ul>
+<div class="note">The paper-towel bridge may have added resistance. This is a possible limitation, not a confirmed cause of the voltage drops. Other contributors: electrode polarization, contact resistance, wiring, electrolyte properties and the current drawn while charging.</div></div>
+<div class="grid"><figure><img src="images/sanding-copper.jpg" alt=""><figcaption>Sanding the copper electrode</figcaption></figure><figure><img src="images/sanding-zinc.jpg" alt=""><figcaption>Sanding the zinc electrode</figcaption></figure><figure><img src="images/weighing-znso4.jpg" alt=""><figcaption>Weighing ZnSO₄ (CuSO₄ weighing photo not available)</figcaption></figure></div></section>
+
+<section id="cells"><h2><i>02 · GALVANIC CELLS</i>Cell Voltage Measurements</h2>
+<div class="grid"><figure><img src="images/cell1-voltage.jpg" alt=""><figcaption>Cell 1 voltage</figcaption></figure><figure><img src="images/cell2-voltage.jpg" alt=""><figcaption>Cell 2 voltage</figcaption></figure><figure><img src="images/series-voltage.jpg" alt=""><figcaption>Two cells in series</figcaption></figure></div>
+<div class="card"><div class="chart"><canvas id="cCells"></canvas></div></div>
+<div class="card tbl"><table><tr><th>Measurement</th><th>Recorded voltage</th></tr><tr><td>Cell 1 (Zn–Cu)</td><td>0.60 V</td></tr><tr><td>Cell 2 (Zn–Cu)</td><td>0.60 V</td></tr><tr><td>Two cells in series</td><td>1.00 V</td></tr></table></div>
+<div class="note">Series voltage (1.00 V) exceeds either single cell but is below the arithmetic sum of 1.20 V. Possible reasons: measurement uncertainty, cell-to-cell variation, contact resistance, polarization or conditions. The observed value is reported as recorded.</div></section>
+
+<section id="conc"><h2><i>03 · SOLUTIONS</i>Preparation & Calculated Concentrations</h2>
+<p>M = (mass ÷ molar mass) ÷ volume (L). Molar masses: ZnSO₄ 161.44, CuSO₄ 159.61, NaCl 58.44 g/mol (anhydrous assumed).</p>
+<div class="tabs" id="ctabs"></div><div class="card tbl" id="ctbl"></div>
+<div class="card"><div class="chart"><canvas id="cConc"></canvas></div></div>
+<div class="card"><b>Molarity calculator</b>
+<div class="calc"><div><label>Solute</label><select id="sel"><option value="161.44">ZnSO₄</option><option value="159.61">CuSO₄</option><option value="58.44">NaCl</option></select></div><div><label>Mass (g)</label><input id="m" type="number" value="58"></div><div><label>Water volume (mL)</label><input id="v" type="number" value="200"></div><div><label>Molarity</label><div class="res" id="res"></div></div></div>
+<small>Tabulated values are as recorded; live results may differ by ≤0.003 M due to molar-mass rounding.</small></div>
+<div class="note"><b>Qualification:</b> these are estimates. Hydrated salts (ZnSO₄·7H₂O, CuSO₄·5H₂O) would give lower molarity, and true molarity needs the final solution volume. Salt-bridge values are valid only if the listed mass is dissolved NaCl.</div></section>
+
+<section id="charge"><h2><i>04 · SUPERCAPACITORS</i>Capacitor Charging Trials</h2>
+<div class="grid"><figure><img src="images/breadboard.jpg" alt=""><figcaption>Breadboard connection to the galvanic cell</figcaption></figure><figure><img src="images/capacitor-t0.jpg" alt=""><figcaption>Capacitor voltage at t = 0 s</figcaption></figure><figure><img src="images/capacitor-t20min.jpg" alt=""><figcaption>Measurements after t = 20 min</figcaption></figure></div>
+<div class="tabs" id="ttabs"></div>
+<div class="card"><div id="tdesc"></div><div class="chart"><canvas id="cCharge"></canvas></div></div>
+<div class="card tbl" id="ttbl"></div><div class="note" id="tnote"></div>
+<figure style="max-width:300px"><img src="images/multimeter-defective.jpg" alt=""><figcaption>Initial multimeter (Wheeler W-488C), found defective before Test 2: it showed no voltage on a live 1.5 V AA battery.</figcaption></figure></section>
+
+<section id="cross"><h2><i>05 · COMPARISON</i>Cross-Trial Interpretation</h2>
+<div class="card"><b>Highest recorded capacitor voltage per trial</b><div class="chart"><canvas id="cCross"></canvas></div></div>
+<div class="grid">
+<div class="card"><b>Wiring reliability</b><br>Capacitor 2 did not charge in Test 1 or early Test 2. After the wiring was corrected it showed voltage, so wiring was a major factor.</div>
+<div class="card"><b>Charging behavior</b><br>Slow charging and source voltage sag under load suggest limited current delivery. Contributors were not isolated or quantified.</div>
+<div class="card"><b>Salt bridge</b><br>A narrow or poorly wetted paper bridge may add resistance — a hypothesis only.</div>
+<div class="card"><b>Concentration</b><br>Masses and volumes both changed between trials, so the effect of concentration cannot be isolated.</div>
+<div class="card"><b>Meter reliability</b><br>The defective multimeter makes Test 1 readings uncertain; the instrument used later should be documented and checked against a known voltage.</div></div></section>
+
+<section id="science"><h2><i>06 · THEORY</i>Scientific Basis</h2>
+<div class="card"><svg viewBox="0 0 640 230" width="100%" role="img" aria-label="Galvanic cell diagram">
+<rect x="60" y="110" width="150" height="90" rx="8" fill="none" stroke="var(--zn)" stroke-width="2"/><rect x="430" y="110" width="150" height="90" rx="8" fill="none" stroke="var(--cu)" stroke-width="2"/>
+<rect x="115" y="70" width="16" height="110" fill="var(--zn)"/><rect x="505" y="70" width="16" height="110" fill="var(--cu)"/>
+<path d="M170 125 Q320 20 430 125" fill="none" stroke="var(--mut)" stroke-width="12" opacity=".35"/><text x="320" y="62" text-anchor="middle" fill="var(--mut)" font-size="12">salt bridge (ions)</text>
+<path class="wire" d="M123 70 V28 H513 V70" fill="none" stroke="var(--ac)" stroke-width="3"/><text x="320" y="20" text-anchor="middle" fill="var(--ac)" font-size="12">e⁻ flow (external wire)</text>
+<text x="135" y="220" text-anchor="middle" fill="var(--zn)" font-size="13">Zn anode · ZnSO₄</text><text x="505" y="220" text-anchor="middle" fill="var(--cu)" font-size="13">Cu cathode · CuSO₄</text></svg>
+<div class="rx"><span class="zn">Anode (oxidation): Zn(s) → Zn²⁺(aq) + 2e⁻</span><br><span class="cu">Cathode (reduction): Cu²⁺(aq) + 2e⁻ → Cu(s)</span><br><b>Overall: Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)</b></div></div>
+<div class="note">Electrons travel through the external path from zinc to copper; the salt bridge lets ions migrate to maintain electrical neutrality. The supercapacitors store charge at their electrode interfaces and do not perform the redox reaction.</div></section>
+
+<section id="concl"><h2><i>07 · SUMMARY</i>Overall Conclusion</h2>
+<div class="card">The Zn–Cu cells generated measurable voltage, and the series connection produced more than either single cell. Capacitor 2’s initial failure was traced to incorrect breadboard wiring; once corrected, both capacitors showed voltage. Charging was slow and the source sagged under load, consistent with source and/or circuit resistance, but the data do not identify a single cause. The trials demonstrate the feasibility of the galvanic-cell and supercapacitor concept while documenting practical issues in wiring, measurement reliability and solution preparation.</div></section>
+</main><footer>General Chemistry 2 · Electrochemistry Performance Task</footer>
+<div id="lb"><img alt=""></div><button class="th" id="th" aria-label="Toggle theme">◐</button>
+<script src="app.js"></script></body></html>
